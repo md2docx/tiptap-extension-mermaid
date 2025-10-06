@@ -1,16 +1,16 @@
 {
-  "name": "react18-loaders",
+  "name": "tiptap-extension-mermaid",
   "author": "Mayank Kumar Chaudhari (https:/mayank-chaudhari.vercel.app)",
   "private": false,
-  "version": "1.1.11",
-  "description": "A comprehensive library that unleashes the full potential of React 18 server components, providing customizable loading animation components alongside a fullscreen loader container. Designed to seamlessly integrate with React and Next.js.",
+  "version": "0.0.0",
+  "description": "",
   "license": "MPL-2.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "repository": "github:react18-tools/turborepo-template",
-  "bugs": "https:/github.com/react18-tools/turborepo-template/issues",
-  "homepage": "https:/turborepo-template-three.vercel.app/",
+  "repository": "github:md2docx/tiptap-extension-mermaid",
+  "bugs": "https://github.com/md2docx/tiptap-extension-mermaid/issues",
+  "homepage": "https://github.com/md2docx/tiptap-extension-mermaid/#readme",
   "sideEffects": false,
   "files": [
     "dist/**"
@@ -52,9 +52,7 @@
     "./*/index.css": "./dist/*/index.css",
     "./dist/*/index.css": "./dist/*/index.css",
     "./index.css": "./dist/index.css",
-    "./styles": "./dist/index.css",
-    "./dist/index.css": "./dist/index.css",
-    "./dist": "./dist/index.css"
+    "./styles": "./dist/index.css"
   },
   "scripts": {
     "build": "tsup && tsc -p tsconfig-build.json && gzip -c dist/index.js | wc -c",
@@ -66,19 +64,19 @@
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "@testing-library/react": "^16.3.0",
-    "@types/node": "^24.5.0",
-    "@types/react": "^19.1.13",
-    "@types/react-dom": "^19.1.9",
-    "@vitejs/plugin-react": "^5.0.2",
+    "@types/node": "^24.6.2",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.0.4",
     "@vitest/coverage-v8": "^3.2.4",
     "esbuild-plugin-rdi": "^0.0.0",
     "esbuild-plugin-react18": "0.2.6",
     "esbuild-plugin-react18-css": "^0.0.4",
     "jsdom": "^27.0.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "tsup": "^8.5.0",
-    "typescript": "^5.9.2",
+    "typescript": "^5.9.3",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"
   },
@@ -92,16 +90,14 @@
   "funding": [
     {
       "type": "github",
-      "url": "https:/github.com/sponsors/mayank1513"
+      "url": "https://github.com/sponsors/md2docx"
     },
     {
-      "type": "individual",
-      "url": "https:/pages.razorpay.com/mayank1513"
+      "type": "github",
+      "url": "https:/github.com/sponsors/mayank1513"
     }
   ],
   "keywords": [
-    "Loading animations",
-    "Fullscreen loader",
     "React",
     "React Loaders",
     "React 18",

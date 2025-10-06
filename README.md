@@ -1,55 +1,16 @@
-# Turborepo Template <img src="https://raw.githubusercontent.com/mayank1513/mayank1513/main/popper.png" style="height: 40px"/>
+# Tiptap Extension Mermaid <img src="https://raw.githubusercontent.com/mayank1513/mayank1513/main/popper.png" style="height: 40px"/>
 
-[![test](https://github.com/react18-tools/turborepo-template/actions/workflows/test.yml/badge.svg)](https://github.com/react18-tools/turborepo-template/actions/workflows/test.yml)
-[![Maintainability](https://qlty.sh/gh/react18-tools/projects/turborepo-template/maintainability.svg)](https://qlty.sh/gh/react18-tools/projects/turborepo-template)
-[![codecov](https://codecov.io/gh/react18-tools/turborepo-template/graph/badge.svg)](https://codecov.io/gh/react18-tools/turborepo-template)
-[![Version](https://img.shields.io/npm/v/react18-loaders.svg?colorB=green)](https://www.npmjs.com/package/react18-loaders)
-[![Downloads](https://img.jsdelivr.com/img.shields.io/npm/d18m/react18-loaders.svg)](https://www.npmjs.com/package/react18-loaders)
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/react18-loaders)
-[![NPM License](https://img.shields.io/npm/l/react18-loaders)](LICENSE)
+[![test](https://github.com/md2docx/tiptap-extension-mermaid/actions/workflows/test.yml/badge.svg)](https://github.com/md2docx/tiptap-extension-mermaid/actions/workflows/test.yml)
+[![Maintainability](https://qlty.sh/gh/md2docx/projects/tiptap-extension-mermaid/maintainability.svg)](https://qlty.sh/gh/md2docx/projects/tiptap-extension-mermaid)
+[![codecov](https://codecov.io/gh/md2docx/tiptap-extension-mermaid/graph/badge.svg)](https://codecov.io/gh/md2docx/tiptap-extension-mermaid)
+[![Version](https://img.shields.io/npm/v/tiptap-extension-mermaid.svg?colorB=green)](https://www.npmjs.com/package/tiptap-extension-mermaid)
+[![Downloads](https://img.jsdelivr.com/img.shields.io/npm/d18m/tiptap-extension-mermaid.svg)](https://www.npmjs.com/package/tiptap-extension-mermaid)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/tiptap-extension-mermaid)
+[![NPM License](https://img.shields.io/npm/l/tiptap-extension-mermaid)](../LICENSE)
 
-> [Explore featured packages built with this template.](./FEATURED.md)
+Tiptap Extension Mermaid is a comprehensive library designed to unlock the full potential of React 18 server components. It provides customizable loading animation components and a fullscreen loader container, seamlessly integrating with React and Next.js.
 
-> Now it is super easy to use this template. Just run `pnpm create r18` and provide your project name. That's it, we will automatically load the template and initiate rebranding.
-
-> Exciting news! We've launched a new course to help you master this template: [Craft Next Gen UI Libraries for React 18 and Next.js 14](https://www.udemy.com/course/craft-next-gen-ui-libraries-for-react-18-and-nextjs-14/?referralCode=46B8C7845ECCEA99E0EF)
-
-<details>
-<summary style="cursor:pointer"><h2 style="display:inline-block">Features</h2></summary>
-
-This template offers the following pre-configured features. Additionally, your repository will automatically be rebranded with the help of workflows and post-install scripts.
-
-✅ Monorepo powered by Turborepo and GitHub actions for automating building, testing, and deploying your library
-
-✅ Examples with Next.js, and Vite to showcase how your library can be utilized
-
-✅ Examples pre-configured for Light/Dark theme based on user preference
-
-✅ Examples ready to be deployed to Vercel
-
-✅ Typedoc setup for automatic documentation generation based on tsdoc comments
-
-✅ Code of Conduct and contributing files, ready for customization
-
-✅ Biome.js (linter and formatter) configured according to modern best practices (Feel free to add your flavor)
-
-✅ Recommended VSCode extensions - Prettier and [Kanban board](https://github.com/mayank1513/vscode-extension-trello-kanban-board) for code formatting and project management directly within your IDE
-
-✅ Powerful code generators - try `yarn plop`
-
-✅ Test setup with Vitest - A modern and fast testing framework supporting Jest-like APIs
-
-✅ Workflows to automate testing on every pull-request or code push event
-
-✅ Workflow to automatically publish and create GitHub releases when you update your library's `package.json` file.
-
-✅ Workflow to automatically rebrand the entire template based on your repository name. (Refer [TODO.md](./TODO.md))
-
-✅ Plus, this readme file includes a quick checklist for configuring Codecov and other badges, setting up your docs website on GitHub pages, and more. See [Checklist](./TODO.md).
-
-### Creates a library that is
-
-✅ Fully Treeshakable (e.g., import {Bars1, Bars2} from `react18-loaders/dist/server/bars`)
+✅ Fully Treeshakable (import from `tiptap-extension-mermaid/client/loader-container`)
 
 ✅ Fully TypeScript Supported
 
@@ -57,74 +18,124 @@ This template offers the following pre-configured features. Additionally, your r
 
 ✅ Compatible with all React 18 build systems/tools/frameworks
 
-✅ Documented with [Typedoc](https://react18-tools.github.io/turborepo-template) ([Docs](https://react18-tools.github.io/turborepo-template))
+✅ Documented with [Typedoc](https://md2docx.github.io/tiptap-extension-mermaid) ([Docs](https://md2docx.github.io/tiptap-extension-mermaid))
 
-</details>
+✅ Examples for Next.js, and Vite
 
-## Getting Started:
+> <img src="https://raw.githubusercontent.com/mayank1513/mayank1513/main/popper.png" style="height: 20px"/> Star [this repository](https://github.com/md2docx/tiptap-extension-mermaid) and share it with your friends.
 
-This template is based on one of the official Turbo Repo starters but comes with a plethora of additional features specifically designed for developing and publishing JavaScript/TypeScript libraries, especially for React 18.
+## Getting Started
 
-To get started, simply click on the `"Use this template"` button to create a new repository based on this template, \*\*update [`sripts/rebrand.config.json`](./scripts/rebrand.config.json) if required, and install dependencies(Will automatically trigger rebrand.ts). Customize it according to your requirements for your next JavaScript/TypeScript/React/Next.js library or project.
-
-For detailed instructions and a checklist, please refer to [TODO.md](./TODO.md).
-
-> You can also start by running `pnpm dlx create-turbo@latest --example https://github.com/react18-tools/turborepo-template/` in command line interface.
-
-## What's Different from Turborepo official templates?
-
-Compared to the default scaffold from create-turbo, this template offers:
-
-- Unit tests with `vitest`
-- Build setup with `tsup` and `esbuild-plugin-react18` that supports React Server components out of the box
-- **Automatic file generation**
-  - Simply run `yarn plop` and follow the prompts to auto-generate your new component with test files and dependency linking, adhering to best practices automatically
-- GitHub actions/workflows to auto-publish your package when the version changes
-- GitHub action/workflow + pre-install scripts to automatically rebrand your repo on creation
-
-> using tsc for type declarations as "Note that declaration files generated by any tool other than tsc are not guaranteed to be error-free, so it's a good idea to test the output with tsc" - https://tsup.egoist.dev/#generate-declaration-file
-> 
-
-## 🧱 Generate New Components
-
-This project uses [`plop`](https://plopjs.com/) to scaffold reusable React components under the `lib` or `packages/shared` directory.
-
-To generate a new component, run:
+### Installation
 
 ```bash
-pnpm plop
+pnpm add tiptap-extension-mermaid
 ```
 
-You’ll be prompted to choose:
+**_or_**
 
-- The **target package** (`lib` or `packages/shared`)
-- The **component name** (e.g., `Card`, or nested like `forms/Input`)
-- Whether it’s a **client component** (adds `"use client"` directive)
-- Whether to include a **`.module.scss` file**
-- Whether to generate a **test stub**
-- An optional **description** (used as JSDoc)
+```bash
+npm install tiptap-extension-mermaid
+```
 
-🧠 The generator:
+**_or_**
 
-- Creates a folder with `.tsx`, optional `.module.scss`, and `.test.tsx`
-- Updates `index.ts` files recursively
-- Adds `exports` to `package.json` automatically
+```bash
+yarn add tiptap-extension-mermaid
+```
 
-## 🤩 Don't forget to star [this repository](https://github.com/react18-tools/turborepo-template)!
+## Want Lite Version? [![npm bundle size](https://img.shields.io/bundlephobia/minzip/tiptap-extension-mermaid-lite)](https://www.npmjs.com/package/tiptap-extension-mermaid-lite) [![Version](https://img.shields.io/npm/v/tiptap-extension-mermaid-lite.svg?colorB=green)](https://www.npmjs.com/package/tiptap-extension-mermaid-lite) [![Downloads](https://img.jsdelivr.com/img.shields.io/npm/d18m/tiptap-extension-mermaid-lite.svg)](https://www.npmjs.com/package/tiptap-extension-mermaid-lite)
 
-Looking for a hands-on course to get started with Turborepo? Check out [React and Next.js with TypeScript](https://mayank-chaudhari.vercel.app/courses/react-and-next-js-with-typescript) and [The Game of Chess with Next.js, React, and TypeScript](https://www.udemy.com/course/game-of-chess-with-nextjs-react-and-typescript/?referralCode=851A28F10B254A8523FE)
+```bash
+pnpm add tiptap-extension-mermaid-lite
+```
 
-![Repo Stats](https://repobeats.axiom.co/api/embed/2ef1a24385037998386148afe5a98ded6006f410.svg "Repobeats analytics image")
+**or**
+
+```bash
+npm install tiptap-extension-mermaid-lite
+```
+
+**or**
+
+```bash
+yarn add tiptap-extension-mermaid-lite
+```
+
+> You need `r18gs` as a peer-dependency
+
+### Import Styles
+
+You can import styles globally or within specific components.
+
+```css
+/* globals.css */
+@import "tiptap-extension-mermaid/styles";
+```
+
+```tsx
+// layout.tsx
+import "tiptap-extension-mermaid/styles";
+```
+
+For selective imports:
+
+```css
+/* globals.css */
+@import "tiptap-extension-mermaid/dist/client/index.css"; /** required if you are using LoaderContainer */
+@import "tiptap-extension-mermaid/dist/server/bars/bars1/index.css";
+```
+
+### Usage
+
+Using loaders is straightforward.
+
+```tsx
+import { Bars1 } from "tiptap-extension-mermaid/dist/server/bars/bars1";
+
+export default function MyComponent() {
+  return someCondition ? <Bars1 /> : <>Something else...</>;
+}
+```
+
+For detailed API and options, refer to [the API documentation](https://md2docx.github.io/tiptap-extension-mermaid).
+
+**Using LoaderContainer**
+
+`LoaderContainer` is a fullscreen component. You can add this component directly in your layout and then use `useLoader` hook to toggle its visibility.
+
+```tsx
+// layout.tsx
+<LoaderContainer />
+	 ...
+```
+
+```tsx
+// some other page or component
+import { useLoader } from "tiptap-extension-mermaid/dist/hooks";
+
+export default MyComponent() {
+	const { setLoading } = useLoader();
+	useCallback(()=>{
+		setLoading(true);
+		...do some work
+		setLoading(false);
+	}, [])
+	...
+}
+```
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=react18-tools/turborepo-template&type=Date)](https://www.star-history.com/#react18-tools/turborepo-template&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=md2docx/tiptap-extension-mermaid&type=Date)](https://www.star-history.com/#md2docx/tiptap-extension-mermaid&Date)
 
 ## License
 
-Licensed under the MPL-2.0 open-source license.
+This library is licensed under the MPL-2.0 open-source license.
 
-> <img src="https://raw.githubusercontent.com/mayank1513/mayank1513/main/popper.png" style="height: 20px"/> Enrolling in [our courses](https://mayank-chaudhari.vercel.app/courses) or [sponsor](https://github.com/sponsors/mayank1513) our work.
+
+
+> <img src="https://raw.githubusercontent.com/mayank1513/mayank1513/main/popper.png" style="height: 20px"/> Please enroll in [our courses](https://mayank-chaudhari.vercel.app/courses) or [sponsor](https://github.com/sponsors/mayank1513) our work.
 
 <hr />
 

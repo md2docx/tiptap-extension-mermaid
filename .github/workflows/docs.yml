@@ -7,7 +7,7 @@ on:
 
 jobs:
   generate-docs:
-    if: github.run_number != 1 && github.event.repository.owner.login == 'react18-tools'
+    if: github.run_number != 1 && github.event.repository.owner.login == 'md2docx'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -54,7 +54,6 @@ jobs:
       - name: Generate/update docs
         run: |
           pnpm doc && pnpm format
-          echo "$(git rev-parse HEAD)" > .turborepo-template.lst
       - name: Save docs back to repo
         run: git add . && git commit -m "upgrade deps && docs [skip ci]" && git push origin main
       - name: Update website
@@ -64,7 +63,7 @@ jobs:
           --method POST \
           -H "Accept: application/vnd.github+json" \
           -H "X-GitHub-Api-Version: 2022-11-28" \
-          /repos/mayank1513/turborepo-template/merge-upstream \
+          /repos/mayank1513/tiptap-extension-mermaid/merge-upstream \
           -f "branch=main"
         env:
           GH_TOKEN: ${{ secrets.mayank1513PAT }}

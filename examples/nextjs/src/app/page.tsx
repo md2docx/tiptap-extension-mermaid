@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import MyButton from "./button";
 
 export const metadata = {
-  title: "React 18 Loaders",
+  title: "Tiptap Extension Mermaid",
 };
 
 /** next.js landing page */
