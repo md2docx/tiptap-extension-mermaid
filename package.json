@@ -1,0 +1,48 @@
+{
+  "name": "turborepo-template",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "clean": "turbo clean",
+    "dev": "turbo dev",
+    "doc": "tsx scripts/doc.ts && typedoc && cp _config.yml docs && tsx scripts/add-frontmatter.ts",
+    "format": "biome check . --write",
+    "lint": "biome check .",
+    "lint:fix": "biome check . --write",
+    "preinstall": "tsx scripts/update-pm.ts",
+    "prepare": "husky",
+    "rebrand": "tsx scripts/rebrand.ts",
+    "release": "tsx ./scripts/publish.ts",
+    "sync": "turborepo-template-upgrade",
+    "test": "turbo test",
+    "typecheck": "turbo typecheck",
+    "upgrade": "tsx ./scripts/upgrade.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.4",
+    "@changesets/cli": "^2.29.7",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^24.6.2",
+    "enquirer": "^2.4.1",
+    "husky": "^9.1.7",
+    "plop": "^4.0.4",
+    "tsx": "^4.20.6",
+    "turbo": "^2.5.8",
+    "turborepo-template-upgrade": "^0.6.2",
+    "typedoc": "^0.28.13",
+    "typedoc-plugin-markdown": "^4.9.0",
+    "typedoc-plugin-mdn-links": "^5.0.9",
+    "typedoc-plugin-missing-exports": "^4.1.0",
+    "typedoc-plugin-rename-defaults": "^0.7.3"
+  },
+  "packageManager": "pnpm@10.18.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "pnpm": {
+    "overrides": {
+      "cross-spawn@<6.0.6": ">=6.0.6",
+      "next@>=15.0.0 <15.2.3": ">=15.2.3"
+    }
+  }
+}
