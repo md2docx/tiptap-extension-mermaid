@@ -8,25 +8,22 @@
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/tiptap-extension-mermaid)
 [![NPM License](https://img.shields.io/npm/l/tiptap-extension-mermaid)](../LICENSE)
 
-Tiptap Extension Mermaid is a comprehensive library designed to unlock the full potential of React 18 server components. It provides customizable loading animation components and a fullscreen loader container, seamlessly integrating with React and Next.js.
+> 🪄 A drop-in [Tiptap](https://tiptap.dev/) extension that adds **live Mermaid diagram rendering** to `CodeBlockLowlight` — powered by [`prosemirror-mermaid`](https://github.com/mayank1513/prosemirror-mermaid).
 
-✅ Fully Treeshakable (import from `tiptap-extension-mermaid/client/loader-container`)
+---
 
-✅ Fully TypeScript Supported
+## ✨ Features
 
-✅ Leverages the power of React 18 Server components
+- **Live Mermaid diagrams** — render instantly as you type
+- **Debounced updates** — smooth editing experience (default: 300 ms)
+- **Syntax highlighting** — integrates with [`lowlight`](https://github.com/wooorm/lowlight) and `lowlight-mermaid`
+- **Tight SVG output** — powered by [`@svg-fns/layout`](https://github.com/mayank1513/svg-fns)
+- **Automatic stable IDs** — each diagram gets a persistent ID via `data-id`
+- **Drop-in for CodeBlockLowlight** — no extra node definitions required
 
-✅ Compatible with all React 18 build systems/tools/frameworks
+---
 
-✅ Documented with [Typedoc](https://md2docx.github.io/tiptap-extension-mermaid) ([Docs](https://md2docx.github.io/tiptap-extension-mermaid))
-
-✅ Examples for Next.js, and Vite
-
-> <img src="https://raw.githubusercontent.com/mayank1513/mayank1513/main/popper.png" style="height: 20px"/> Star [this repository](https://github.com/md2docx/tiptap-extension-mermaid) and share it with your friends.
-
-## Getting Started
-
-### Installation
+## 🚀 Installation
 
 ```bash
 pnpm add tiptap-extension-mermaid
@@ -44,96 +41,129 @@ npm install tiptap-extension-mermaid
 yarn add tiptap-extension-mermaid
 ```
 
-## Want Lite Version? [![npm bundle size](https://img.shields.io/bundlephobia/minzip/tiptap-extension-mermaid-lite)](https://www.npmjs.com/package/tiptap-extension-mermaid-lite) [![Version](https://img.shields.io/npm/v/tiptap-extension-mermaid-lite.svg?colorB=green)](https://www.npmjs.com/package/tiptap-extension-mermaid-lite) [![Downloads](https://img.jsdelivr.com/img.shields.io/npm/d18m/tiptap-extension-mermaid-lite.svg)](https://www.npmjs.com/package/tiptap-extension-mermaid-lite)
+---
 
-```bash
-pnpm add tiptap-extension-mermaid-lite
+## 🧩 Quick Start
+
+```ts
+import { CodeblockLowlightMermaid } from "tiptap-extension-mermaid";
+import { createLowlight } from "lowlight";
+import { Editor } from "@tiptap/core";
+import mermaid from "mermaid";
+
+// Important: initialize Mermaid manually
+mermaid.initialize({ startOnLoad: false });
+
+const lowlight = createLowlight();
+
+const editor = new Editor({
+  extensions: [
+    CodeblockLowlightMermaid.configure({
+      lowlight,
+      classList: "mermaid-container",
+      debounce: 400,
+      mermaidConfig: {
+        theme: "neutral",
+      },
+    }),
+  ],
+  content: `
+  \`\`\`mermaid
+  graph TD
+    A[Start] --> B{Is it working?}
+    B -- Yes --> C[Ship it!]
+    B -- No --> D[Fix and retry]
+  \`\`\`
+  `,
+});
 ```
 
-**or**
+---
 
-```bash
-npm install tiptap-extension-mermaid-lite
-```
+## ⚙️ Options
 
-**or**
+| Option              | Type                                | Default            | Description                                      |
+| ------------------- | ----------------------------------- | ------------------ | ------------------------------------------------ |
+| **`lowlight`**      | `ReturnType<typeof createLowlight>` | `{}`               | Lowlight instance for syntax highlighting.       |
+| **`debounce`**      | `number`                            | `300`              | Delay (ms) before re-render after typing stops.  |
+| **`mermaidConfig`** | `MermaidConfig`                     | `{}`               | Passed directly to `mermaid.initialize()`.       |
+| **`classList`**     | `string[] \| string`                | `""`               | CSS class(es) applied to each diagram container. |
+| **`id` (auto)**     | `string`                            | Random `mxxxxxxxx` | Auto-generated, persisted via `data-id`.         |
 
-```bash
-yarn add tiptap-extension-mermaid-lite
-```
+---
 
-> You need `r18gs` as a peer-dependency
+## 🧠 How It Works
 
-### Import Styles
+- Extends [`@tiptap/extension-code-block-lowlight`](https://tiptap.dev/api/extensions/code-block-lowlight)
+- Adds an `id` attribute per node for stable Mermaid rendering
+- Injects the [`prosemirror-mermaid`](https://github.com/mayank1513/prosemirror-mermaid) plugin to manage rendering, caching, and SVG lifecycle
+- Registers Mermaid grammars (`mermaid`, `mmd`, `mindmap`) in `lowlight` if available
 
-You can import styles globally or within specific components.
+---
+
+## 🧰 Example Styling
 
 ```css
-/* globals.css */
-@import "tiptap-extension-mermaid/styles";
-```
-
-```tsx
-// layout.tsx
-import "tiptap-extension-mermaid/styles";
-```
-
-For selective imports:
-
-```css
-/* globals.css */
-@import "tiptap-extension-mermaid/dist/client/index.css"; /** required if you are using LoaderContainer */
-@import "tiptap-extension-mermaid/dist/server/bars/bars1/index.css";
-```
-
-### Usage
-
-Using loaders is straightforward.
-
-```tsx
-import { Bars1 } from "tiptap-extension-mermaid/dist/server/bars/bars1";
-
-export default function MyComponent() {
-  return someCondition ? <Bars1 /> : <>Something else...</>;
+.mermaid-container {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  background: var(--code-bg, #f8f9fa);
 }
 ```
 
-For detailed API and options, refer to [the API documentation](https://md2docx.github.io/tiptap-extension-mermaid).
+---
 
-**Using LoaderContainer**
-
-`LoaderContainer` is a fullscreen component. You can add this component directly in your layout and then use `useLoader` hook to toggle its visibility.
+## 🧩 Advanced Example (React + Tiptap)
 
 ```tsx
-// layout.tsx
-<LoaderContainer />
-	 ...
+import { useEditor, EditorContent } from "@tiptap/react";
+import { CodeblockLowlightMermaid } from "tiptap-extension-mermaid";
+import { createLowlight } from "lowlight";
+import mermaid from "mermaid";
+
+const lowlight = createLowlight();
+mermaid.initialize({ startOnLoad: false });
+
+export const MermaidEditor = () => {
+  const editor = useEditor({
+    extensions: [
+      CodeblockLowlightMermaid.configure({
+        lowlight,
+        classList: ["mermaid-container", "diagram"],
+      }),
+    ],
+  });
+
+  return <EditorContent editor={editor} />;
+};
 ```
 
-```tsx
-// some other page or component
-import { useLoader } from "tiptap-extension-mermaid/dist/hooks";
+---
 
-export default MyComponent() {
-	const { setLoading } = useLoader();
-	useCallback(()=>{
-		setLoading(true);
-		...do some work
-		setLoading(false);
-	}, [])
-	...
-}
-```
+## 🪄 Integration Notes
 
-## Star History
+- Works seamlessly with **Tiptap v2+**
+- You must **manually initialize Mermaid** before using
+- Diagrams render only for code blocks with `language` = `mermaid`, `mmd`, or `mindmap`
+- Errors during rendering are displayed inline (non-blocking)
 
-[![Star History Chart](https://api.star-history.com/svg?repos=md2docx/tiptap-extension-mermaid&type=Date)](https://www.star-history.com/#md2docx/tiptap-extension-mermaid&Date)
+---
+
+## 🙏 Credits
+
+- [Mermaid](https://mermaid.js.org/) for diagrams
+- [Tiptap](https://tiptap.dev/) for the editor framework
+- [@svg-fns](https://github.com/mayank1513/svg-fns) for SVG manipulation utilities
+- [prosemirror-mermaid](https://github.com/mayank1513/prosemirror-mermaid) — the rendering engine underneath
+
+---
 
 ## License
 
 This library is licensed under the MPL-2.0 open-source license.
-
-
 
 > <img src="https://raw.githubusercontent.com/mayank1513/mayank1513/main/popper.png" style="height: 20px"/> Please enroll in [our courses](https://mayank-chaudhari.vercel.app/courses) or [sponsor](https://github.com/sponsors/mayank1513) our work.
 
