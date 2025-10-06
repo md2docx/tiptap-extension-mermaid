@@ -40,7 +40,12 @@
     "@m2d/react-markdown": "^1.0.0",
     "@mayank1513/fork-me": "^2.1.3",
     "@repo/scripts": "workspace:*",
+    "@tiptap/extension-document": "^3.6.5",
+    "@tiptap/extension-paragraph": "^3.6.5",
+    "@tiptap/extension-text": "^3.6.5",
+    "@tiptap/react": "^3.6.5",
     "esbuild-raw-plugin": "^0.3.1",
+    "lowlight": "^3.3.0",
     "mdast2docx": "^1.6.0",
     "nextjs-darkmode": "^1.0.10",
     "nextjs-themes": "^4.0.6",
@@ -48,7 +53,7 @@
     "react-live": "^4.1.8",
     "react18-loaders": "latest",
     "rehype-raw": "^7.0.0",
-    "typingfx": "^1.2.0",
-    "tiptap-extension-mermaid": "workspace:*"
+    "tiptap-extension-mermaid": "workspace:*",
+    "typingfx": "^1.2.0"
   }
 }

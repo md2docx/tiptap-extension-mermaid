@@ -4,7 +4,7 @@ import CodeBlockLowlight, {
 import type { MermaidConfig } from "mermaid";
 import { mermaidPlugin } from "prosemirror-mermaid";
 
-interface CodeblockLowlightMermaidOptions extends CodeBlockLowlightOptions {
+interface CodeBlockLowlightMermaidOptions extends CodeBlockLowlightOptions {
   /**
    * The debounce delay in milliseconds for rendering the mermaid diagram after
    * the user stops typing.
@@ -22,8 +22,8 @@ interface CodeblockLowlightMermaidOptions extends CodeBlockLowlightOptions {
   classList: string[] | string;
 }
 
-export const CodeblockLowlightMermaid =
-  CodeBlockLowlight.extend<CodeblockLowlightMermaidOptions>({
+export const CodeBlockLowlightMermaid =
+  CodeBlockLowlight.extend<CodeBlockLowlightMermaidOptions>({
     addOptions() {
       return {
         ...this.parent?.(),

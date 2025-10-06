@@ -1,6 +1,6 @@
 import type { MermaidConfig } from "mermaid";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { CodeblockLowlightMermaid } from "./ext";
+import { CodeBlockLowlightMermaid } from "./ext";
 
 // Mock dependencies
 vi.mock("@tiptap/extension-code-block-lowlight", () => ({
@@ -33,7 +33,7 @@ describe("CodeblockLowlightMermaid", () => {
 
   describe("addOptions", () => {
     it("should return default options", () => {
-      const extension = CodeblockLowlightMermaid;
+      const extension = CodeBlockLowlightMermaid;
       // @ts-expect-error - test
       const options = extension.addOptions?.();
 
@@ -55,7 +55,7 @@ describe("CodeblockLowlightMermaid", () => {
     it("should merge with parent options", () => {
       const mockParent = vi.fn(() => ({ customOption: "test" }));
       const extension = {
-        ...CodeblockLowlightMermaid,
+        ...CodeBlockLowlightMermaid,
         parent: mockParent,
       };
 
@@ -74,7 +74,7 @@ describe("CodeblockLowlightMermaid", () => {
 
   describe("addAttributes", () => {
     it("should add id attribute with default value", () => {
-      const extension = CodeblockLowlightMermaid;
+      const extension = CodeBlockLowlightMermaid;
       // @ts-expect-error - test
       const attributes = extension.addAttributes?.();
 
@@ -83,7 +83,7 @@ describe("CodeblockLowlightMermaid", () => {
     });
 
     it("should parse id from data-id attribute", () => {
-      const extension = CodeblockLowlightMermaid;
+      const extension = CodeBlockLowlightMermaid;
       // @ts-expect-error - test
       const attributes = extension.addAttributes?.();
 
@@ -97,7 +97,7 @@ describe("CodeblockLowlightMermaid", () => {
     });
 
     it("should generate new id if data-id not found", () => {
-      const extension = CodeblockLowlightMermaid;
+      const extension = CodeBlockLowlightMermaid;
       // @ts-expect-error - test
       const attributes = extension.addAttributes?.();
 
@@ -110,7 +110,7 @@ describe("CodeblockLowlightMermaid", () => {
     });
 
     it("should render data-id attribute", () => {
-      const extension = CodeblockLowlightMermaid;
+      const extension = CodeBlockLowlightMermaid;
       // @ts-expect-error - test
       const attributes = extension.addAttributes?.();
 
@@ -119,7 +119,7 @@ describe("CodeblockLowlightMermaid", () => {
     });
 
     it("should return empty object if no id", () => {
-      const extension = CodeblockLowlightMermaid;
+      const extension = CodeBlockLowlightMermaid;
       // @ts-expect-error - test
       const attributes = extension.addAttributes?.();
 
@@ -130,7 +130,7 @@ describe("CodeblockLowlightMermaid", () => {
     it("should merge with parent attributes", () => {
       const mockParent = vi.fn(() => ({ parentAttr: "value" }));
       const extension = {
-        ...CodeblockLowlightMermaid,
+        ...CodeBlockLowlightMermaid,
         parent: mockParent,
       };
 
@@ -155,10 +155,10 @@ describe("CodeblockLowlightMermaid", () => {
 
       // Simulate extension creation with custom options
       const extension = {
-        ...CodeblockLowlightMermaid,
+        ...CodeBlockLowlightMermaid,
         options: {
           // @ts-expect-error - test
-          ...CodeblockLowlightMermaid.addOptions?.(),
+          ...CodeBlockLowlightMermaid.addOptions?.(),
           ...customOptions,
         },
       };
@@ -173,10 +173,10 @@ describe("CodeblockLowlightMermaid", () => {
 
     it("should accept string classList", () => {
       const extension = {
-        ...CodeblockLowlightMermaid,
+        ...CodeBlockLowlightMermaid,
         options: {
           // @ts-expect-error - test
-          ...CodeblockLowlightMermaid.addOptions?.(),
+          ...CodeBlockLowlightMermaid.addOptions?.(),
           classList: "single-class",
         },
       };
