@@ -2,5 +2,7 @@
   "packageName": "tiptap-extension-mermaid",
   "owner": "md2docx",
   "repo": "tiptap-extension-mermaid",
-  "title": "Tiptap Extension Mermaid"
+  "title": "Tiptap Extension Mermaid",
+  "removedPackages": ["examples/express", "packages/logger"],
+  "removedFeatures": ["Rebrander", "Docs", "Generators", "LiteMode"]
 }
