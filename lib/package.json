@@ -3,7 +3,7 @@
   "author": "Mayank Kumar Chaudhari (https:/mayank-chaudhari.vercel.app)",
   "private": false,
   "version": "0.0.0",
-  "description": "",
+  "description": "A Tiptap extension to render Mermaid diagrams as SVG with live editing and error handling.",
   "license": "MPL-2.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -21,37 +21,6 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     },
-    "./*": {
-      "types": [
-        "./dist/*",
-        "./dist/*/index.d.ts"
-      ],
-      "import": [
-        "./dist/*",
-        "./dist/*/index.mjs"
-      ],
-      "require": [
-        "./dist/*",
-        "./dist/*/index.js"
-      ]
-    },
-    "./dist/*": {
-      "types": [
-        "./dist/*",
-        "./dist/*/index.d.ts"
-      ],
-      "import": [
-        "./dist/*",
-        "./dist/*/index.mjs"
-      ],
-      "require": [
-        "./dist/*",
-        "./dist/*/index.js"
-      ]
-    },
-    "./*/index.css": "./dist/*/index.css",
-    "./dist/*/index.css": "./dist/*/index.css",
-    "./index.css": "./dist/index.css",
     "./styles": "./dist/index.css"
   },
   "scripts": {
@@ -63,29 +32,26 @@
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
-    "@testing-library/react": "^16.3.0",
     "@types/node": "^24.6.2",
     "@types/react": "^19.2.0",
-    "@types/react-dom": "^19.2.0",
-    "@vitejs/plugin-react": "^5.0.4",
     "@vitest/coverage-v8": "^3.2.4",
     "esbuild-plugin-rdi": "^0.0.0",
-    "esbuild-plugin-react18": "0.2.6",
-    "esbuild-plugin-react18-css": "^0.0.4",
     "jsdom": "^27.0.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "lowlight": "^3.3.0",
+    "mermaid": "^11.12.0",
+    "prosemirror-model": "^1.18.3",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-view": "^1.28.2",
     "tsup": "^8.5.0",
     "typescript": "^5.9.3",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"
   },
-  "dependencies": {
-    "r18gs": "^3.0.1"
-  },
   "peerDependencies": {
-    "@types/react": ">=16.8",
-    "react": ">=16.8"
+    "lowlight": "^3.3.0",
+    "prosemirror-model": "^1.18.3",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-view": "^1.28.2"
   },
   "funding": [
     {
@@ -116,5 +82,9 @@
     "Modern",
     "Seamless integration",
     "mayank1513"
-  ]
+  ],
+  "dependencies": {
+    "@tiptap/extension-code-block-lowlight": "^3.6.5",
+    "prosemirror-mermaid": "^0.0.0"
+  }
 }

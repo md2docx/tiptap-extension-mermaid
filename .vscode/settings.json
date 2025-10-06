@@ -14,8 +14,11 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSaveMode": "file",
   "mayank1513.trello-kanban.Workspace.filePath": ".tkb",
-  "cSpell.words": ["noscss"],
+  "cSpell.words": ["Lowlight", "noscss", "prosemirror"],
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
   }
 }
