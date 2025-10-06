@@ -48,7 +48,7 @@ describe("CodeblockLowlightMermaid", () => {
         HTMLAttributes: {},
         debounce: 300,
         mermaidConfig: {},
-        classList: "",
+        classList: "mermaid-container",
       });
     });
 
@@ -67,7 +67,7 @@ describe("CodeblockLowlightMermaid", () => {
         customOption: "test",
         debounce: 300,
         mermaidConfig: {},
-        classList: "",
+        classList: "mermaid-container",
       });
     });
   });
