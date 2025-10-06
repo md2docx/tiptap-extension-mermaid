@@ -37,7 +37,7 @@ export const CodeBlockLowlightMermaid =
         HTMLAttributes: {},
         debounce: 300,
         mermaidConfig: {},
-        classList: "",
+        classList: "mermaid-container",
       };
     },
     addAttributes() {

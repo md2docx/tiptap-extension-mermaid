@@ -39,7 +39,12 @@ const initialContent = `
 export function Demo() {
   const editor = useEditor({
     content: initialContent,
-    extensions: [Document, Paragraph, CodeBlockLowlightMermaid, Text],
+    extensions: [
+      Document,
+      Paragraph,
+      CodeBlockLowlightMermaid.configure({ lowlight }),
+      Text,
+    ],
     immediatelyRender: false,
   });
 
